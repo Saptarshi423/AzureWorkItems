@@ -5,41 +5,6 @@ const pat = import.meta.env.VITE_AZURE_PAT;
 const org = import.meta.env.VITE_AZURE_ORG;
 const project = import.meta.env.VITE_AZURE_PROJECT;
 
-// const headers = {
-//   Authorization: `Basic ${btoa(":" + pat)}`,
-// };
-
-// export async function fetchToDoItems() : Promise<{ id: number; createdDate: string, title:string}[]> {
-//   const query = {
-//     query: `
-//       SELECT [System.Id]
-//       FROM WorkItems
-//       WHERE [System.TeamProject] = '${project}'
-//       AND [System.State] IN ('To Do', 'Doing')
-//     `,
-//   };
-
-//   const wiqlResponse = await axios.post(
-//     `https://dev.azure.com/${org}/${project}/_apis/wit/wiql?api-version=7.0`,
-//     query,
-//     { headers }
-//   );
-
-//   const ids = wiqlResponse.data.workItems.map((item: any) => item.id).join(",");
-//   if (!ids) return [];
-
-//   const detailsResponse = await axios.get(
-//     `https://dev.azure.com/${org}/_apis/wit/workitems?ids=${ids}&$select=System.Id,System.Title,System.CreatedDate&api-version=7.0`,
-//     { headers }
-//   );
-
-//   return detailsResponse.data.value.map((item: any) => ({
-//     id: item.id,
-//     createdDate: item.fields["System.CreatedDate"],
-//     title: item.fields["System.Title"],
-//   }));
-// }
-
 interface WorkItem {
   SlNo: number;
   id: number;
