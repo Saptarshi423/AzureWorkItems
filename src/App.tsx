@@ -4,7 +4,7 @@ import { WorkItemsTable } from "./component/WorkItemsTable";
 function App() {
 
   return (
-    <div>
+    <div style={{backgroundColor: "#ffffff"}}>
       <WorkItemsTable/>
     </div>
   );
